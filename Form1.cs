@@ -96,7 +96,7 @@ namespace DinApp
             }
         }
 
-        private void LoadQuery(object sender, EventArgs e)
+        private void btnLoadQuery_Click(object sender, EventArgs e)
         {
             txtQuery.Text = "SELECT table_name\r\nFROM information_schema.tables\r\nWHERE table_type = 'BASE TABLE'";
         }
@@ -121,7 +121,7 @@ namespace DinApp
 
                     // Leer las plantillas y comparar las señales
                     while (reader.Read())
-                    {
+                    { //Esto no funciona directamente tendria que añadir un modo de seleccion para que cada usuario pueda hacerlo como quiera
                         string templateTag = reader["TemplateTag"].ToString();
                         string Id = reader["TemplateId"].ToString();
                         string mapeado = reader["Mapeado"].ToString();
@@ -157,6 +157,18 @@ namespace DinApp
                 {
                     MessageBox.Show("Error al ejecutar la consulta: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void btnCloseConnection_Click(object sender, EventArgs e)
+        {
+            if (connection != null && connection.State == ConnectionState.Open)
+            {
+                connection.Close();
+            } 
+            else
+            {
+                MessageBox.Show("No hay una conexión activa.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

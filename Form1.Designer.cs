@@ -22,6 +22,8 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnCompareSignals;
         private System.Windows.Forms.TextBox txtSignals;
+        private System.Windows.Forms.Button btnLoadQuery;
+        private System.Windows.Forms.Button btnCloseConnection;
 
         protected override void Dispose(bool disposing)
         {
@@ -47,12 +49,14 @@
             lblPassword = new Label();
             lblStatus = new Label();
             tabQuery = new TabPage();
+            btnLoadQuery = new Button();
             btnExecuteQuery = new Button();
             txtQuery = new TextBox();
             lstResults = new ListBox();
             tabSignalComparison = new TabPage();
             btnCompareSignals = new Button();
             txtSignals = new TextBox();
+            btnCloseConnection = new Button();
             tabControl.SuspendLayout();
             tabConnection.SuspendLayout();
             tabQuery.SuspendLayout();
@@ -72,6 +76,7 @@
             // 
             // tabConnection
             // 
+            tabConnection.Controls.Add(btnCloseConnection);
             tabConnection.Controls.Add(btnConnect);
             tabConnection.Controls.Add(txtServer);
             tabConnection.Controls.Add(lblServer);
@@ -154,6 +159,7 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(216, 23);
             txtPassword.TabIndex = 7;
+            txtPassword.UseSystemPasswordChar = true;
             // 
             // lblPassword
             // 
@@ -175,6 +181,7 @@
             // 
             // tabQuery
             // 
+            tabQuery.Controls.Add(btnLoadQuery);
             tabQuery.Controls.Add(btnExecuteQuery);
             tabQuery.Controls.Add(txtQuery);
             tabQuery.Controls.Add(lstResults);
@@ -185,6 +192,16 @@
             tabQuery.TabIndex = 1;
             tabQuery.Text = "Consulta SQL";
             tabQuery.UseVisualStyleBackColor = true;
+            // 
+            // btnLoadQuery
+            // 
+            btnLoadQuery.Location = new Point(115, 6);
+            btnLoadQuery.Name = "btnLoadQuery";
+            btnLoadQuery.Size = new Size(70, 23);
+            btnLoadQuery.TabIndex = 13;
+            btnLoadQuery.Text = "Ver Tablas";
+            btnLoadQuery.UseVisualStyleBackColor = true;
+            btnLoadQuery.Click += btnLoadQuery_Click;
             // 
             // btnExecuteQuery
             // 
@@ -242,6 +259,16 @@
             txtSignals.Name = "txtSignals";
             txtSignals.Size = new Size(324, 345);
             txtSignals.TabIndex = 14;
+            // 
+            // btnCloseConnection
+            // 
+            btnCloseConnection.Location = new Point(118, 12);
+            btnCloseConnection.Name = "btnCloseConnection";
+            btnCloseConnection.Size = new Size(100, 23);
+            btnCloseConnection.TabIndex = 10;
+            btnCloseConnection.Text = "Desconectar";
+            btnCloseConnection.UseVisualStyleBackColor = true;
+            btnCloseConnection.Click += btnCloseConnection_Click;
             // 
             // Form1
             // 
