@@ -21,7 +21,7 @@ namespace DinApp
             string password = txtPassword.Text;  // txtPassword es el TextBox para la contraseña
 
             // Crear la cadena de conexión
-            string connectionString = $"Server={server}; Database={database}; User Id={userId}; Password={password};";
+            string connectionString = $"Server={server}; Database={database}; User Id={userId}; Password = {password}; Integrated Security=True";
 
             // Intentar conectar con la base de datos
             using (SqlConnection connection = new SqlConnection(connectionString))
