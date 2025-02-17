@@ -16,17 +16,12 @@
         private void InitializeComponent()
         {
             button1 = new Button();
-            Variable = new ListBox();
             Opc = new TabControl();
             Opciones = new TabPage();
             lblServer = new Label();
             txtServer = new TextBox();
             lblDatabase = new Label();
             txtDatabase = new TextBox();
-            lblUserId = new Label();
-            txtUserId = new TextBox();
-            lblPassword = new Label();
-            txtPassword = new TextBox();
             lblStatus = new Label();
             Datos = new TabPage();
             loadTablesButton = new Button();
@@ -43,21 +38,11 @@
             button1.ForeColor = Color.Black;
             button1.Location = new Point(6, 193);
             button1.Name = "button1";
-            button1.Size = new Size(302, 73);
+            button1.Size = new Size(255, 73);
             button1.TabIndex = 0;
             button1.Text = "Abrir BD";
             button1.UseVisualStyleBackColor = true;
             button1.Click += btnConnect_Click;
-            // 
-            // Variable
-            // 
-            Variable.Cursor = Cursors.No;
-            Variable.FormattingEnabled = true;
-            Variable.ItemHeight = 15;
-            Variable.Location = new Point(314, 7);
-            Variable.Name = "Variable";
-            Variable.Size = new Size(179, 259);
-            Variable.TabIndex = 1;
             // 
             // Opc
             // 
@@ -73,16 +58,11 @@
             // 
             // Opciones
             // 
-            Opciones.Controls.Add(Variable);
             Opciones.Controls.Add(button1);
             Opciones.Controls.Add(lblServer);
             Opciones.Controls.Add(txtServer);
             Opciones.Controls.Add(lblDatabase);
             Opciones.Controls.Add(txtDatabase);
-            Opciones.Controls.Add(lblUserId);
-            Opciones.Controls.Add(txtUserId);
-            Opciones.Controls.Add(lblPassword);
-            Opciones.Controls.Add(txtPassword);
             Opciones.Controls.Add(lblStatus);
             Opciones.Location = new Point(4, 24);
             Opciones.Name = "Opciones";
@@ -95,7 +75,7 @@
             // lblServer
             // 
             lblServer.AutoSize = true;
-            lblServer.Location = new Point(6, 10);
+            lblServer.Location = new Point(7, 103);
             lblServer.Name = "lblServer";
             lblServer.Size = new Size(53, 15);
             lblServer.TabIndex = 3;
@@ -103,7 +83,7 @@
             // 
             // txtServer
             // 
-            txtServer.Location = new Point(92, 7);
+            txtServer.Location = new Point(93, 100);
             txtServer.Name = "txtServer";
             txtServer.Size = new Size(216, 23);
             txtServer.TabIndex = 4;
@@ -111,7 +91,7 @@
             // lblDatabase
             // 
             lblDatabase.AutoSize = true;
-            lblDatabase.Location = new Point(6, 50);
+            lblDatabase.Location = new Point(7, 143);
             lblDatabase.Name = "lblDatabase";
             lblDatabase.Size = new Size(82, 15);
             lblDatabase.TabIndex = 5;
@@ -119,43 +99,10 @@
             // 
             // txtDatabase
             // 
-            txtDatabase.Location = new Point(92, 47);
+            txtDatabase.Location = new Point(93, 140);
             txtDatabase.Name = "txtDatabase";
             txtDatabase.Size = new Size(216, 23);
             txtDatabase.TabIndex = 6;
-            // 
-            // lblUserId
-            // 
-            lblUserId.AutoSize = true;
-            lblUserId.Location = new Point(6, 90);
-            lblUserId.Name = "lblUserId";
-            lblUserId.Size = new Size(50, 15);
-            lblUserId.TabIndex = 7;
-            lblUserId.Text = "Usuario:";
-            // 
-            // txtUserId
-            // 
-            txtUserId.Location = new Point(92, 87);
-            txtUserId.Name = "txtUserId";
-            txtUserId.Size = new Size(216, 23);
-            txtUserId.TabIndex = 8;
-            // 
-            // lblPassword
-            // 
-            lblPassword.AutoSize = true;
-            lblPassword.Location = new Point(6, 130);
-            lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(70, 15);
-            lblPassword.TabIndex = 9;
-            lblPassword.Text = "Contraseña:";
-            // 
-            // txtPassword
-            // 
-            txtPassword.Location = new Point(92, 127);
-            txtPassword.Name = "txtPassword";
-            txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(216, 23);
-            txtPassword.TabIndex = 10;
             // 
             // lblStatus
             // 
