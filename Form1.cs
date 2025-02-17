@@ -2,6 +2,7 @@ using System;
 using Microsoft.Data.SqlClient;
 using System.Windows.Forms;
 
+//A帽adir usuario Guest para correcto funcionamiento
 namespace DinApp
 {
     public partial class Form1 : Form
@@ -11,25 +12,25 @@ namespace DinApp
             InitializeComponent();
         }
 
-        // Evento del bot髇 para conectar
+        // Evento del bot贸n para conectar
         private void btnConnect_Click(object sender, EventArgs e)
         {
             // Recoger los datos ingresados por el usuario en los TextBox
             string server = txtServer.Text;  // txtServer es el TextBox para el servidor
             string database = txtDatabase.Text;  // txtDatabase es el TextBox para la base de datos
             string userId = txtUserId.Text;  // txtUserId es el TextBox para el usuario
-            string password = txtPassword.Text;  // txtPassword es el TextBox para la contrase馻
+            string password = txtPassword.Text;  // txtPassword es el TextBox para la contrase帽a User Id={userId}; Password = {password};
 
-            // Crear la cadena de conexi髇
-            string connectionString = $"Server={server}; Database={database}; User Id={userId}; Password = {password}; Integrated Security=True";
+            // Crear la cadena de conexi贸n
+            string connectionString = $"Server={server}; Database={database};TrustServerCertificate=True;" ;
 
             // Intentar conectar con la base de datos
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
-                    connection.Open();  // Establecer la conexi髇
-                    lblStatus.Text = "Conexi髇 exitosa!";
+                    connection.Open();  // Establecer la conexi贸n
+                    lblStatus.Text = "Conexi贸n exitosa!";
                     lblStatus.ForeColor = System.Drawing.Color.Green;  // Cambiar color de texto a verde
                 }
                 catch (Exception ex)
