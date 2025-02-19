@@ -165,11 +165,28 @@ namespace DinApp
             if (connection != null && connection.State == ConnectionState.Open)
             {
                 connection.Close();
-            } 
+            }
             else
             {
                 MessageBox.Show("No hay una conexión activa.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btnTemplates_Click(object sender, EventArgs e)
+        {
+            string query = @"
+                SELECT 
+                    T.TemplateName AS Plantilla,
+                    A.AttributeName AS Atributo,
+                    A.DataType AS TipoDato
+                FROM 
+                    dbo.Template T
+                JOIN 
+                    dbo.TemplateAttributes A ON T.TemplateID = A.TemplateID
+                ORDER BY 
+                    T.TemplateName, A.AttributeName;";
+
+            txtQuery.Text = query;
         }
     }
 }

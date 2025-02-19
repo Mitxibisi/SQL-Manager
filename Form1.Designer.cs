@@ -24,6 +24,7 @@
         private System.Windows.Forms.TextBox txtSignals;
         private System.Windows.Forms.Button btnLoadQuery;
         private System.Windows.Forms.Button btnCloseConnection;
+        private System.Windows.Forms.Button Plantilla;
 
         protected override void Dispose(bool disposing)
         {
@@ -38,6 +39,7 @@
         {
             tabControl = new TabControl();
             tabConnection = new TabPage();
+            btnCloseConnection = new Button();
             btnConnect = new Button();
             txtServer = new TextBox();
             lblServer = new Label();
@@ -49,6 +51,7 @@
             lblPassword = new Label();
             lblStatus = new Label();
             tabQuery = new TabPage();
+            Plantilla = new Button();
             btnLoadQuery = new Button();
             btnExecuteQuery = new Button();
             txtQuery = new TextBox();
@@ -56,7 +59,6 @@
             tabSignalComparison = new TabPage();
             btnCompareSignals = new Button();
             txtSignals = new TextBox();
-            btnCloseConnection = new Button();
             tabControl.SuspendLayout();
             tabConnection.SuspendLayout();
             tabQuery.SuspendLayout();
@@ -94,6 +96,16 @@
             tabConnection.TabIndex = 0;
             tabConnection.Text = "Conexión";
             tabConnection.UseVisualStyleBackColor = true;
+            // 
+            // btnCloseConnection
+            // 
+            btnCloseConnection.Location = new Point(118, 12);
+            btnCloseConnection.Name = "btnCloseConnection";
+            btnCloseConnection.Size = new Size(100, 23);
+            btnCloseConnection.TabIndex = 10;
+            btnCloseConnection.Text = "Desconectar";
+            btnCloseConnection.UseVisualStyleBackColor = true;
+            btnCloseConnection.Click += btnCloseConnection_Click;
             // 
             // btnConnect
             // 
@@ -181,6 +193,7 @@
             // 
             // tabQuery
             // 
+            tabQuery.Controls.Add(Plantilla);
             tabQuery.Controls.Add(btnLoadQuery);
             tabQuery.Controls.Add(btnExecuteQuery);
             tabQuery.Controls.Add(txtQuery);
@@ -192,6 +205,16 @@
             tabQuery.TabIndex = 1;
             tabQuery.Text = "Consulta SQL";
             tabQuery.UseVisualStyleBackColor = true;
+            // 
+            // Plantilla
+            // 
+            Plantilla.Location = new Point(191, 6);
+            Plantilla.Name = "Plantilla";
+            Plantilla.Size = new Size(75, 23);
+            Plantilla.TabIndex = 14;
+            Plantilla.Text = "Plantillas";
+            Plantilla.UseVisualStyleBackColor = true;
+            Plantilla.Click += btnTemplates_Click;
             // 
             // btnLoadQuery
             // 
@@ -218,16 +241,16 @@
             txtQuery.Location = new Point(9, 35);
             txtQuery.Multiline = true;
             txtQuery.Name = "txtQuery";
-            txtQuery.Size = new Size(324, 52);
+            txtQuery.Size = new Size(324, 77);
             txtQuery.TabIndex = 11;
             // 
             // lstResults
             // 
             lstResults.FormattingEnabled = true;
             lstResults.ItemHeight = 15;
-            lstResults.Location = new Point(9, 103);
+            lstResults.Location = new Point(9, 118);
             lstResults.Name = "lstResults";
-            lstResults.Size = new Size(324, 274);
+            lstResults.Size = new Size(324, 259);
             lstResults.TabIndex = 12;
             // 
             // tabSignalComparison
@@ -259,16 +282,7 @@
             txtSignals.Name = "txtSignals";
             txtSignals.Size = new Size(324, 345);
             txtSignals.TabIndex = 14;
-            // 
-            // btnCloseConnection
-            // 
-            btnCloseConnection.Location = new Point(118, 12);
-            btnCloseConnection.Name = "btnCloseConnection";
-            btnCloseConnection.Size = new Size(100, 23);
-            btnCloseConnection.TabIndex = 10;
-            btnCloseConnection.Text = "Desconectar";
-            btnCloseConnection.UseVisualStyleBackColor = true;
-            btnCloseConnection.Click += btnCloseConnection_Click;
+            txtSignals.ScrollBars = ScrollBars.Both;
             // 
             // Form1
             // 
